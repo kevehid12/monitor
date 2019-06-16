@@ -1,0 +1,3 @@
+e; do
+        curl -X POST --data-urlencode 'payload={"text": "'"$file"' is uploaded to '"$path"' on '"$HOSTNAME"'."}' https://hooks.slack.com/services/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
+        echo "The file '$file' appeared in directory '$path' via '$action'"
