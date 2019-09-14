@@ -18,7 +18,7 @@ content= $logfile
 
 if [ ! -s "$content" ] 
 then
-	curl -X POST --data-urlencode 'payload={ "username": "webhookbot", "text": "Failed login has been detected, please check the server for more informaiton", "icon_emoji": ":ghost:"}' https://hooks.slack.com/services/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
+	curl -X POST --data-urlencode 'payload={ "username": "webhookbot", "text": "Failed login has been detected, please check the server for more informaiton", "icon_emoji": ":ghost:"}' https://hooks.slack.com/services/blabla
 else
 	echo "try it again"
 fi
