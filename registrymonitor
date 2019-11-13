@@ -1,0 +1,15 @@
+$key = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon'
+while ($true)
+{
+    #Check the registry value for AutoAdminLogon
+    $AutoAdminLogon = (Get-ItemProperty -Path $key -Name AutoAdminLogon).AutoAdminLogon
+    if ($AutoAdminLogon -eq "0")
+    {
+        $timenow = [datetime]::Now
+        Write-Output "$timenow - AutoAdminLogon is 0"
+        #Notify user
+        Write-Host -Fore Green "Malicious registry change has been detected"
+    }
+    #Now wait a minute before checking again
+    Start-Sleep -Seconds 60
+}
